@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Web Dev Journey - FABLAB</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: #000;
+      color: #FFD700;
+      font-family: 'Courier New', monospace;
+      padding: 15px 12px;
+    }
+
+    h1 { text-align: center; font-size: 1.5em; letter-spacing: 2px; margin-bottom: 5px; text-transform: uppercase; border-bottom: 1px solid #FFD700; padding-bottom: 8px; }
+    .subtitle { text-align: center; font-size: 0.8em; color: #ccaa00; margin-bottom: 20px; }
+    .day-card { display: flex; align-items: flex-start; gap: 12px; border: 1px solid #FFD700; border-radius: 4px; padding: 10px; margin-bottom: 12px; background-color: #0a0a0a; }
+
+    .day-label { min-width: 40px; font-size: 1.2em; font-weight: bold; text-align: center; }
+    .day-label span { display: block; font-size: 0.4em; color: #ccaa00; letter-spacing: 1px; }
+    .screenshot { width: 200px; min-width: 150px; border: 1px solid #FFD700; border-radius: 3px; }
+    .day-info { flex: 1; }
+    .day-info h2 { font-size: 0.95em; margin-bottom: 4px; text-decoration: underline; }
+    .day-info p { font-size: 0.75em; color: #e0c060; line-height: 1.5; margin-bottom: 5px; }
+    .topics { list-style: none; padding: 0; }
+    .topics li { font-size: 0.72em; color: #FFD700; padding: 2px 0; }
+    .topics li::before { content: "▶ "; color: #ccaa00; }
+    @media (max-width: 600px) { .day-card { flex-direction: column; } .screenshot { width: 100%; } }
+  </style>
+</head>
+<body>
+
+  <h1> Web Developement</h1>
+  <p class="subtitle"> HTML, CSS & JavaScript</p>
+
+  <!-- DAY 1 -->
+  <div class="day-card">
+    <div class="day-label">01<span>DAY</span></div>
+    <img src="WD-day1.png" class="screenshot"  alt="Day 1 - HTML Basics">
+    <div class="day-info">
+      <h2>Basic HTML Tags</h2>
+      <p>Started with core HTML tags to structure a webpage. Built a page listing SSGMCE branches and semester subjects using text and list tags.</p>
+      <ul class="topics">
+        <li>&lt;p&gt;, &lt;b&gt;, &lt;i&gt;, &lt;marquee&gt; — text formatting</li>
+        <li>&lt;ul&gt;, &lt;ol&gt;, &lt;li&gt; — lists</li>
+        <li>bgcolor, font size, &lt;br&gt; attributes</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- DAY 2 -->
+  <div class="day-card">
+    <div class="day-label">02<span>DAY</span></div>
+    <img src="Screenshot 2026-03-21 223655.png"  class="screenshot"alt="Day 2 - Media & Table">
+    <div class="day-info">
+      <h2>Image, Anchor, Video/Audio & Table</h2>
+      <p>Embedded media into a webpage and structured data using tables. Added a YouTube link, local image, audio player, and autoplay video.</p>
+      <ul class="topics">
+        <li>&lt;img&gt;, &lt;a href&gt; — image and hyperlink</li>
+        <li>&lt;audio controls&gt;, &lt;video autoplay loop muted&gt;</li>
+        <li>&lt;table&gt;, &lt;tr&gt;, &lt;td&gt;, &lt;th&gt; — data tables</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- DAY 3 -->
+  <div class="day-card">
+    <div class="day-label">03<span>DAY</span></div>
+    <img src="Screenshot 2026-03-21 224158.png" class="screenshot" alt="Day 3 - Forms">
+    <div class="day-info">
+      <h2>HTML Forms</h2>
+      <p>Built a Committee Interview Registration Form with multiple input types and validation. Learned how forms collect and submit user data.</p>
+      <ul class="topics">
+        <li>&lt;form&gt; with action, method, enctype</li>
+        <li>Input types: text, password, email, tel, date, url, color, range, radio</li>
+        <li>Attributes: placeholder, required, minlength, pattern</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- DAY 4 -->
+  <div class="day-card">
+    <div class="day-label">04<span>DAY</span></div>
+    <img src="Screenshot 2026-03-21 230708.png" class="screenshot" alt="Day 4 - CSS Header Nav Footer">
+    <div class="day-info">
+      <h2>Header, Nav, Footer with CSS Selectors</h2>
+      <p>Built an "Engineering World" club page using semantic HTML. Styled it using various CSS selectors and hover effects on navigation links.</p>
+      <ul class="topics">
+        <li>&lt;header&gt;, &lt;nav&gt;, &lt;section&gt;, &lt;footer&gt; — semantic tags</li>
+        <li>CSS selectors: element, class, id, universal, group</li>
+        <li>:hover pseudo-class for nav links</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- DAY 5 -->
+  <div class="day-card">
+    <div class="day-label">05<span>DAY</span></div>
+    <img src="Screenshot 2026-03-21 234546.png" class="screenshot" alt="Day 5 - Box Model Flexbox">
+    <div class="day-info">
+      <h2>Box Model & Flexbox</h2>
+      <p>Learned CSS layout using the Box Model and Flexbox. Centered a To-Do card on screen and understood how spacing and sizing work around elements.</p>
+      <ul class="topics">
+        <li>Box Model: margin, border, padding, content</li>
+        <li>display: flex, justify-content, align-items</li>
+        <li>height: 100vh, border-radius, background-color</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- DAY 6 -->
+  <div class="day-card">
+    <div class="day-label">06<span>DAY</span></div>
+    <img src="Screenshot 2026-03-21 225907.png" class="screenshot" alt="Day 6 - JavaScript Basics">
+    <div class="day-info">
+      <h2>JavaScript Basics & Operations</h2>
+      <p>Introduction to JavaScript variables and operators. Practiced all arithmetic operations and explored string concatenation and boolean behaviour in the console.</p>
+      <ul class="topics">
+        <li>var, console.log() — variables and output</li>
+        <li>Arithmetic: +, -, *, /, % operators</li>
+        <li>String concatenation, boolean ops, NaN</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- DAY 7 -->
+  <div class="day-card">
+    <div class="day-label">07<span>DAY</span></div>
+    <img src="Screenshot 2026-03-21 225757.png" class="screenshot" alt="Day 7 - To-Do List Project">
+    <div class="day-info">
+      <h2>To-Do List Project</h2>
+      <p>Final project combining HTML, CSS, and JavaScript. Built a functional To-Do List where users can add and delete tasks dynamically using DOM manipulation.</p>
+      <ul class="topics">
+        <li>DOM manipulation — add/delete tasks dynamically</li>
+        <li>Flexbox UI layout and card styling</li>
+        <li>Linking external script.js to HTML</li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+</html>

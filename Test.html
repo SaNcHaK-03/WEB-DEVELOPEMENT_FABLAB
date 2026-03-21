@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sanchit Chakole | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --black: #0a0a0a;
+      --dark: #111111;
+      --yellow: #f5c400;
+      --yellow-light: #ffe566;
+      --white: #f0f0f0;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Share Tech Mono', monospace;
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--dark);
+      border-bottom: 2px solid var(--yellow);
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: 65px;
+    }
+
+    .logo {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.2rem;
+      color: var(--yellow);
+      letter-spacing: 2px;
+    }
+
+    .logo span { color: var(--white); }
+
+    /* ── NAV ── */
+    nav { display: flex; gap: 6px; }
+
+    nav a {
+      position: relative;
+      color: var(--white);
+      text-decoration: none;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 1.5px;
+      padding: 8px 14px;
+      border: 1px solid transparent;
+      text-transform: uppercase;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    nav a:hover { color: var(--yellow); border-color: var(--yellow); }
+
+    nav a.active {
+      color: var(--black);
+      background: var(--yellow);
+      border-color: var(--yellow);
+    }
+
+    /* ── SPARK ── */
+    .spark-container { position: fixed; pointer-events: none; z-index: 9999; }
+
+    .spark {
+      position: absolute;
+      border-radius: 50%;
+      background: var(--yellow);
+      animation: sparkFly 0.55s ease-out forwards;
+    }
+
+    @keyframes sparkFly {
+      0%   { transform: translate(0,0) scale(1); opacity: 1; }
+      100% { transform: translate(var(--dx), var(--dy)) scale(0); opacity: 0; }
+    }
+
+    .bolt-pop {
+      position: absolute;
+      font-size: 22px;
+      pointer-events: none;
+      animation: boltFade 0.4s ease-out forwards;
+    }
+
+    @keyframes boltFade {
+      0%   { opacity: 1; transform: scale(1) translateY(0); }
+      100% { opacity: 0; transform: scale(1.6) translateY(-10px); }
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      display: none;
+      padding: 60px 40px;
+      max-width: 960px;
+      margin: 0 auto;
+      animation: fadeIn 0.35s ease;
+    }
+
+    section.active { display: block; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2rem;
+      color: var(--yellow);
+      letter-spacing: 3px;
+      margin-bottom: 6px;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 55px;
+      height: 3px;
+      background: var(--yellow);
+      margin-top: 8px;
+    }
+
+    .sub-text { color: #777; font-size: 0.82rem; margin: 10px 0 30px; }
+
+    /* ── HOME ── */
+    #home { text-align: center; padding-top: 80px; }
+
+    .home-bolt {
+      font-size: 4rem;
+      animation: glow 1.6s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 8px var(--yellow); }
+      to   { text-shadow: 0 0 30px var(--yellow), 0 0 60px #f5c40077; }
+    }
+
+    .home-name {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.6rem;
+      font-weight: 900;
+      color: var(--yellow);
+      letter-spacing: 4px;
+      margin: 16px 0 10px;
+    }
+
+    .home-role { font-size: 0.95rem; color: #ccc; letter-spacing: 2px; margin-bottom: 24px; }
+
+    .home-desc {
+      font-size: 0.88rem;
+      color: #888;
+      max-width: 520px;
+      margin: 0 auto 36px;
+      line-height: 1.9;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--black);
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 2px;
+      padding: 12px 28px;
+      border: none;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .btn:hover { background: var(--yellow-light); transform: scale(1.04); }
+
+    /* ── ABOUT ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--dark);
+      border-left: 3px solid var(--yellow);
+      padding: 20px;
+    }
+
+    .card h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.78rem;
+      color: var(--yellow);
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    .card p { font-size: 0.83rem; color: #aaa; line-height: 1.8; }
+
+    /* ── SKILLS ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .skill-item {
+      background: var(--dark);
+      border: 1px solid #222;
+      padding: 16px;
+      transition: border-color 0.2s;
+    }
+
+    .skill-item:hover { border-color: var(--yellow); }
+
+    .skill-name {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.72rem;
+      color: var(--yellow);
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .bar { height: 4px; background: #222; }
+    .bar-fill { height: 100%; background: var(--yellow); }
+
+    /* ── PROJECTS ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      background: var(--dark);
+      border: 1px solid #222;
+      padding: 22px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .project-card:hover { border-color: var(--yellow); transform: translateY(-4px); }
+
+    .project-card h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.8rem;
+      color: var(--yellow);
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    .project-card p { font-size: 0.82rem; color: #999; line-height: 1.7; }
+
+    .tag {
+      display: inline-block;
+      border: 1px solid var(--yellow);
+      color: var(--yellow);
+      font-size: 0.62rem;
+      padding: 2px 8px;
+      margin: 8px 3px 0 0;
+      letter-spacing: 1px;
+    }
+
+    /* ── FABLAB ── */
+    .fablab-box {
+      background: var(--dark);
+      border: 1px solid var(--yellow);
+      padding: 24px;
+    }
+
+    .fablab-box p { font-size: 0.86rem; color: #aaa; line-height: 1.9; }
+
+    .tools { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+
+    .tool {
+      background: #0f0f00;
+      border: 1px solid var(--yellow);
+      color: var(--yellow);
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.68rem;
+      padding: 6px 14px;
+      letter-spacing: 1px;
+    }
+
+    /* ── CONTACT ── */
+    .contact-list { display: flex; flex-direction: column; gap: 14px; }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--dark);
+      border-left: 3px solid var(--yellow);
+      padding: 14px 20px;
+      font-size: 0.86rem;
+      color: #ccc;
+    }
+
+    .contact-item .ico { font-size: 1.2rem; width: 26px; text-align: center; }
+    .contact-item a { color: var(--yellow); text-decoration: none; }
+    .contact-item a:hover { text-decoration: underline; }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 18px;
+      font-size: 0.73rem;
+      color: #444;
+      border-top: 1px solid #1a1a1a;
+      margin-top: 60px;
+    }
+
+    footer span { color: var(--yellow); }
+  </style>
+</head>
+<body>
+
+<header>
+    <nav id="mainNav">
+    <a href="#" class="nav-link active" data-target="home">Home</a>
+    <a href="#" class="nav-link" data-target="about">About</a>
+    <a href="#" class="nav-link" data-target="skills">Skills</a>
+    <a href="#" class="nav-link" data-target="projects">Projects</a>
+    <a href="#" class="nav-link" data-target="fablab">Fablab</a>
+    <a href="#" class="nav-link" data-target="contact">Contact</a>
+  </nav>
+</header>
+
+<div class="spark-container" id="sparkBox"></div>
+
+<!-- HOME -->
+<section id="home" class="active">
+  <div class="home-bolt">⚡</div>
+  <div class="home-name">Sanchit Chakole</div>
+  <div class="home-role">Electrical Engineering &nbsp;·&nbsp; Electronics &amp; Power</div>
+  <div class="home-desc">
+    Engineering circuits, systems, and solutions — one spark at a time.<br/>
+    Passionate about power electronics, embedded systems, and fabrication.
+  </div>
+  <button class="btn" onclick="goTo('contact')">Get In Touch</button>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-title">About</div>
+  <div class="sub-text">// who I am</div>
+  <div class="about-grid">
+    <div class="card">
+      <h3>⚡ Background</h3>
+      <p>I'm Sanchit Chakole, an Electrical Engineering student specialising in Electronics and Power. I love exploring how electricity powers the modern world — from microcontrollers to high-voltage systems.</p>
+    </div>
+    <div class="card">
+      <h3>🎓 Education</h3>
+      <p>B.E. Electrical Engineering (Electronics & Power)<br/>Focused on practical projects, lab work, and hands-on fabrication.</p>
+    </div>
+    <div class="card">
+      <h3>🔧 Interests</h3>
+      <p>Power Electronics · Embedded Systems · Circuit Design · PCB Fabrication · IoT · Automation · Renewable Energy</p>
+    </div>
+    <div class="card">
+      <h3>🌟 Goal</h3>
+      <p>To build impactful electronic solutions and contribute to sustainable power systems and smart automation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-title">Skills</div>
+  <div class="sub-text">// tools & technologies</div>
+  <div class="skills-grid">
+    <div class="skill-item"><div class="skill-name">Circuit Design</div><div class="bar"><div class="bar-fill" style="width:85%"></div></div></div>
+    <div class="skill-item"><div class="skill-name">Power Electronics</div><div class="bar"><div class="bar-fill" style="width:80%"></div></div></div>
+    <div class="skill-item"><div class="skill-name">Arduino / ESP32</div><div class="bar"><div class="bar-fill" style="width:78%"></div></div></div>
+    <div class="skill-item"><div class="skill-name">MATLAB / Simulink</div><div class="bar"><div class="bar-fill" style="width:72%"></div></div></div>
+    <div class="skill-item"><div class="skill-name">PCB Design (KiCad)</div><div class="bar"><div class="bar-fill" style="width:68%"></div></div></div>
+    <div class="skill-item"><div class="skill-name">Python</div><div class="bar"><div class="bar-fill" style="width:65%"></div></div></div>
+    <div class="skill-item"><div class="skill-name">3D Modelling</div><div class="bar"><div class="bar-fill" style="width:60%"></div></div></div>
+    <div class="skill-item"><div class="skill-name">Soldering & Prototyping</div><div class="bar"><div class="bar-fill" style="width:90%"></div></div></div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-title">Projects</div>
+  <div class="sub-text">// things I've built</div>
+  <div class="projects-grid">
+    <div class="project-card">
+      <h3>⚡ Smart Energy Meter</h3>
+      <p>IoT-based energy monitoring system using ESP32 that logs power consumption in real-time to a web dashboard.</p>
+      <span class="tag">ESP32</span><span class="tag">IoT</span><span class="tag">Power</span>
+    </div>
+    <div class="project-card">
+      <h3>🔋 Solar MPPT Controller</h3>
+      <p>Designed and simulated a Maximum Power Point Tracking controller for solar panels using MATLAB Simulink.</p>
+      <span class="tag">MATLAB</span><span class="tag">Solar</span><span class="tag">MPPT</span>
+    </div>
+    <div class="project-card">
+      <h3>🤖 Line Follower Robot</h3>
+      <p>Built a robot with IR sensors and motor control circuit that autonomously follows a line on the floor.</p>
+      <span class="tag">Arduino</span><span class="tag">Robotics</span><span class="tag">C++</span>
+    </div>
+    <div class="project-card">
+      <h3>🔌 DC-DC Boost Converter</h3>
+      <p>Designed a PCB-level boost converter to step up 5V to 12V, verified on oscilloscope with 92% efficiency.</p>
+      <span class="tag">PCB</span><span class="tag">KiCad</span><span class="tag">Power</span>
+    </div>
+  </div>
+</section>
+
+<!-- FABLAB -->
+<section id="fablab">
+  <div class="section-title">Fablab</div>
+  <div class="sub-text">// fabrication & making</div>
+  <div class="fablab-box">
+    <p>
+      I actively work in the Fabrication Laboratory, designing and prototyping electronic and mechanical systems.
+      The Fablab is my creative space — turning ideas into real, working hardware using modern digital fabrication tools.
+      From laser cutting enclosures to 3D-printing mounts and etching PCBs, I enjoy the full cycle from design to physical prototype.
+    </p>
+    <div class="tools">
+      <div class="tool">Web Developement</div>
+      <div class="tool">CAC Cutting</div>
+      <div class="tool">PCB Design</div>
+      <div class="tool">3D-Printing</div>
+      <div class="tool">AI-ML</div>
+      <div class="tool">Cybersecurity</div>
+      <div class="tool">Fusion 360</div>
+      <div class="tool">Networking</div>
+      <div class="tool">Java</div>
+      <div class="tool">UI/UX</div>
+      
+      
+
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-title">Contact</div>
+  <div class="sub-text">// let's connect</div>
+  <div class="contact-list">
+    <div class="contact-item"><span class="ico"></span>Email: <a href="chakolesanchit07@gmail.com">chakolesanchit07@gmail.com</a></div>
+    <div class="contact-item"><span class="ico"></span>LinkedIn: <a href="#">linkedin.com/in/sanchit-chakole</a></div>
+    <div class="contact-item"><span class="ico"></span>GitHub: <a href="#">github.com/SaNcHaK-03</a></div>
+  </div>
+</section>
+
+<footer>
+  <span>⚡</span> Sanchit Chakole &nbsp;·&nbsp; Electrical Engineering &nbsp;·&nbsp; Built with voltage &amp; passion
+</footer>
+
+<script>
+  const links    = document.querySelectorAll('.nav-link');
+  const sections = document.querySelectorAll('section');
+  const sparkBox = document.getElementById('sparkBox');
+
+  function goTo(target) {
+    sections.forEach(s => s.classList.remove('active'));
+    links.forEach(l => l.classList.remove('active'));
+    document.getElementById(target).classList.add('active');
+    const lnk = document.querySelector('[data-target="' + target + '"]');
+    if (lnk) lnk.classList.add('active');
+  }
+
+  function spawnSpark(x, y) {
+    // sparks
+    for (let i = 0; i < 14; i++) {
+      const el  = document.createElement('div');
+      el.className = 'spark';
+      const angle = (360 / 14) * i;
+      const dist  = 24 + Math.random() * 30;
+      const rad   = angle * Math.PI / 180;
+      el.style.left = x + 'px';
+      el.style.top  = y + 'px';
+      el.style.setProperty('--dx', (Math.cos(rad) * dist) + 'px');
+      el.style.setProperty('--dy', (Math.sin(rad) * dist) + 'px');
+      el.style.background = Math.random() > 0.35 ? '#f5c400' : '#ffffff';
+      const sz = (2 + Math.random() * 4) + 'px';
+      el.style.width  = sz;
+      el.style.height = sz;
+      sparkBox.appendChild(el);
+      el.addEventListener('animationend', () => el.remove());
+    }
+    // bolt emoji pop
+    const bolt = document.createElement('div');
+    bolt.className   = 'bolt-pop';
+    bolt.textContent = '⚡';
+    bolt.style.left  = (x - 11) + 'px';
+    bolt.style.top   = (y - 18) + 'px';
+    sparkBox.appendChild(bolt);
+    bolt.addEventListener('animationend', () => bolt.remove());
+  }
+
+  links.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const r  = this.getBoundingClientRect();
+      spawnSpark(r.left + r.width / 2, r.top + r.height / 2);
+      goTo(this.dataset.target);
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<title> Registration Form</title>
+<head> <b><u>Commitee Interview Form</u><b></head>
+<form action="#" method="post" enctype="multipart/form-data">
+     <br>
+    Full Name:
+     <input type="text" name="fullname" placeholder="Enter full Name">
+     <br><br>
+      Password:
+      <input type="password" name="password" minlength="6" required>
+      <br><br>
+
+      Email:
+      <input type="email" name="email" required>
+      <br><br>
+
+      Contact Number:
+      <input type="tel" name="Contact Number" pattern="[0-9]{10}"  placeholder="Enter Contact"required>
+      
+      <br><br>
+      DOB:
+      <input type="date" name="DOB">
+      <br><br>
+      Website:
+      <input type="url" name="Website" placeholder="https://example.com">
+      <br><br>
+      Favourite Color:
+      <input type="color" name="Color">
+      <br><br>
+      Satisfaction Level:
+      <input type="range" name="Range" min="0" max="10">
+      <br><br>
+      Gender:
+      <input type="radio" name="Gender" value="male"> Male
+      <input type="radio" name="Gender" value="female"> Female
+      <input type="radio" name="Gender" value="other"> Other
+      <br><br>
+      Hobbies:
+      <input type="checkbox" name="hobby" value="Sports"> Sports
+      <input type="checkbox" name="hobby" value="Singing"> Singing
+      <input type="checkbox" name="hobby" value="Dancing"> Dancing
+      <br><br>
+      City:
+      <select name="city">
+        <option value="">Select City</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Pune">Pune</option>
+        <option value="Nagpur">Nagpur</option>
+        <option value="Nashik">Nashik</option>
+        <option value="Chandrapur">Chandrapur</option>
+        <option value="Akola">Akola</option>
+        <option value="Wardha">Wardha</option>
+        </select>
+        <br><br>
+       Subjets:
+       <select name="subjects" multiple size="5">
+        <option value="math">Mathematics</option>
+        <option value="physics">Physics</option>
+        <option value="chemistry">Chemistry</option>
+        <option value="computer">Computer Science</option>
+        <option value="Workshop">Workshop</option>
+        </select>
+        <br><br>
+        Upload profile picture:
+        <input type="file" name="Profile" accept="image/*">
+        <br><br>
+       Address:
+       <br>
+       <textarea name="address" rows="4" cols="40" placeholder="Enter your Address">
+        </textarea>
+        <br><br>
+        Enter the no:
+        <input type="number" name="num" min="0" max="100">
+        <br><br>
+        <label for="appt">Select a time:</label>
+
+          <input type="time" id="appt" name="appt">
+          <br><br>   
+          <label for="week">Select a week:</label>
+           <input type="week" id="week" name="week">
+           <br><br>
+           <label for="bdaymonth">Birthday (month and year):</label>
+           <input type="month" id="bdaymonth" name="bdaymonth">
+           <br><br><br><br>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+        <br><br>
+
+       
+        
+              
+
+
+
+
+

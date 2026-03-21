@@ -1,0 +1,15 @@
+
+<head>
+<title>Element Selector</title>
+
+<style>
+p{ color: rgb(41, 41, 140);
+     font-size: 18px;              
+     }
+     </style></head>
+     <body>
+
+        <h1>Element Selector </h1>
+        <p> This is CSS programming.</p>
+        <p>This is inline CSS</p>
+         </body>
