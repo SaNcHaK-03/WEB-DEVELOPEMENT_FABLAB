@@ -1245,7 +1245,7 @@
 
 <!-- HOME -->
 <section id="home" class="active" style="min-height:90vh;padding-top:80px;position:relative;">
-  <div style="position:absolute;inset:0;background:rgba(0,0,0,0.42);"></div>
+  <div style="position:absolute;inset:0;background:rgba(0,0,0,0.68);"></div>
   <div style="position:relative;z-index:1;">
     <div class="home-profile" style="margin:0 auto 18px;width:140px;height:140px;border-radius:50%;border:3px solid #f5c400;overflow:hidden;box-shadow:0 0 20px #f5c400,0 0 40px #f5c40055;">
       <img src="a232180b-9935-40e4-9cbb-c742493e6340.jpg" alt="Sanchit Chakole" style="width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block;" />
@@ -1664,6 +1664,9 @@
         <div class="f360-img-wrap">
             <img src="Screenshot%202026-08-21%20193539.png" alt="Bolt in Fusion 360" />
         </div>
+        <div class="f360-img-wrap">
+          <img src="Screenshot%202026-08-21%20193521.png" alt="Threaded bolt detail in Fusion 360" />
+        </div>
       </div>
       <div class="f360-text">
         <div class="f360-plan-box">
@@ -2034,6 +2037,9 @@ a += 5; <span class="cmt">// assignment: 15</span></div>
         <div class="java-img-wrap" onclick="openZoom(this)">
           <img src="Screenshot%202026-08-24%20114641.png" alt="Eco.java - Interface Payable with Employee and Customer" />
         </div>
+        <div class="java-img-wrap" onclick="openZoom(this)">
+          <img src="java-day5.svg" alt="Java Day 5 - Classes, Objects and Methods" />
+        </div>
       </div>
       <div class="java-text">
         <div class="java-plan-box">
@@ -2085,10 +2091,70 @@ a += 5; <span class="cmt">// assignment: 15</span></div>
       </div>
     </div>
   </div>
-  <!-- JAVA DAY 5 -->
+  <!-- JAVA DAY 6 -->
   <div class="java-day-card">
     <div class="java-day-header">
       <span class="java-badge">DAY 05</span>
+      <span class="java-title-text">Encapsulation and Inheritance</span>
+    </div>
+    <div class="java-body">
+      <div class="java-screenshots">
+        <div class="java-img-wrap" onclick="openZoom(this)">
+          <img src="java-day6.svg" alt="Java Day 6 - Encapsulation and Inheritance" />
+        </div>
+      </div>
+      <div class="java-text">
+        <div class="java-plan-box">
+          <h4>📌 Topics Covered</h4>
+          <ul>
+            <li>Protecting data with private fields</li>
+            <li>Accessing data through getters and setters</li>
+            <li>Parent and child class relationships</li>
+            <li>Using super() to call parent constructors</li>
+          </ul>
+        </div>
+        <p class="java-desc">Applied encapsulation to protect class data and used inheritance to reuse common properties and behaviour across parent and child classes.</p>
+        <div class="code-block"><span class="kw">class</span> <span class="cls">Child</span> <span class="kw">extends</span> <span class="cls">Parent</span> {
+  <span class="cls">Child</span>() { <span class="kw">super</span>(); }
+}</div>
+        <div class="java-tags"><span class="java-tag hi">Encapsulation</span><span class="java-tag hi">Inheritance</span><span class="java-tag">private Fields</span><span class="java-tag">Getters and Setters</span><span class="java-tag">super()</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVA DAY 7 -->
+  <div class="java-day-card">
+    <div class="java-day-header">
+      <span class="java-badge">DAY 06</span>
+      <span class="java-title-text">Polymorphism, Interfaces and Project Integration</span>
+    </div>
+    <div class="java-body">
+      <div class="java-screenshots">
+        <div class="java-img-wrap" onclick="openZoom(this)">
+          <img src="java-day7.svg" alt="Java Day 7 - Polymorphism and Interfaces" />
+        </div>
+      </div>
+      <div class="java-text">
+        <div class="java-plan-box">
+          <h4>📌 Topics Covered</h4>
+          <ul>
+            <li>Method overriding with @Override</li>
+            <li>Runtime polymorphism through parent references</li>
+            <li>Defining contracts with interfaces</li>
+            <li>Combining OOP concepts in a practical project</li>
+          </ul>
+        </div>
+        <p class="java-desc">Completed the OOP track by using polymorphism and interfaces to give different classes their own implementation while sharing a common contract. Connected these ideas with the Smart Daily Task Manager project.</p>
+        <div class="code-block"><span class="cls">Task</span> task = <span class="kw">new</span> <span class="cls">DailyTask</span>();
+task.execute(); <span class="cmt">// runtime polymorphism</span></div>
+        <div class="java-tags"><span class="java-tag hi">Polymorphism</span><span class="java-tag hi">Interfaces</span><span class="java-tag">@Override</span><span class="java-tag">OOP Integration</span><span class="java-tag">Final Practice</span></div>
+      </div>
+    </div>
+  </div>
+  <!-- JAVA DAY 7 - FINAL PROJECT -->
+  <div class="java-day-card">
+    <div class="java-day-header">
+      <span class="java-badge">DAY 07</span>
       <span class="java-title-text">Final Project 🎯 — Habit Chain Manager</span>
     </div>
     <div class="java-body">
@@ -2109,18 +2175,8 @@ a += 5; <span class="cmt">// assignment: 15</span></div>
             <li>Prerequisite chaining — habit only available if dependency is done</li>
           </ul>
         </div>
-        <p class="java-desc">
-          The capstone project — built a fully functional
-          <strong style="color:var(--java)">Habit Chain Manager</strong> CLI app in Java. The app lets
-          users add habits with prerequisites, view only available habits (dependency resolved), mark
-          habits as complete, view all habits with status, and reset the day — all through an interactive
-          do-while menu loop with a switch-case dispatcher.
-        </p>
-        <p class="java-desc">
-          This project consolidated every concept from the week — classes, objects, constructors,
-          ArrayList, loops, conditionals, Scanner input, and method organisation — into a single
-          real-world, useful application.
-        </p>
+        <p class="java-desc">The capstone project — built a fully functional <strong style="color:var(--java)">Habit Chain Manager</strong> CLI app in Java. The app lets users add habits with prerequisites, view available habits, mark habits as complete, view status, and reset the day through an interactive do-while menu.</p>
+        <p class="java-desc">This project consolidates the week’s classes, objects, constructors, ArrayList, loops, conditionals, Scanner input, and method organisation into one useful application.</p>
         <div class="code-block"><span class="kw">class</span> <span class="cls">Habit</span> {
   String name, prerequisite;
   <span class="kw">boolean</span> completedToday;
